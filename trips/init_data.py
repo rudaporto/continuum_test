@@ -17,6 +17,13 @@ def update_trip(uid, payload):
     return trip
 
 
+def delete_trip(uid):
+    session = Session()
+    trip = session.query(Trip).get(uid)
+    session.delete(trip)
+    session.commit()
+
+
 def print_versions(versions):
     for item in versions:
         print(item.id, item.payload)
@@ -49,6 +56,8 @@ def main():
     t1 = update_trip(t1.id, payload)
     all_versions3 = t1.versions.all()
     print_versions(all_versions3)
+
+    delete_trip(t1.id)
 
 
 if __name__ == '__main__':
