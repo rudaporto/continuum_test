@@ -1,4 +1,4 @@
-# Trips test changelog sqlalchemy continuum
+# Ssqlalchemy continuum simple example
 
 Steps to run the example:
 
